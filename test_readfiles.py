@@ -17,5 +17,11 @@ class TestReadFiles(unittest.TestCase):
             data = handle.read()
             self.assertEqual(data,readfiles.read_file("test.txt")) #readfiles.read_file is a function that returns data from the file
 
+    def test_nonfile(self):
+        """
+        Test to confirm that an exeption is raised when a wrong file is inputted
+        """
+        self.assertEqual(None, readfiles.read_file("tests.txt"))
+
 if __name__ == "__main__":
     unittest.main()
